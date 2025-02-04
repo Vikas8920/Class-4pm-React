@@ -1,56 +1,29 @@
-// //////////////Class component
+// Today's Topics: Props, React Events, React Lists
+import React from 'react'
+// import KeyPress from './Component/KeyPress'
+// import Garrage2 from './Component/Garrage2'
+import Garrage3 from './Component/Garrage3'
+// import Button from './Component/Button'
+// import Garage from './Component/Garage'
+// import Football from './Component/Football'
 
+// Props
+const App = () => {
+  return (
+    <>
+      {/* <Button text={'Click me'}/>
+      <Button text={'Submit'}/> */}
 
-import React, { Component } from 'react'
-// import Greeting from './Component/Greeting'
-// import Counter from './Component/Counter'
-// import Logger from './Component/Logger'
-import Counter2 from './Component/Counter2'
+      {/* <Garage/> */}
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        {/* <Greeting name='Vikas'/> */}
+      {/* <Football/> */}
 
-        {/* <Counter/> */}
-        {/* <Logger/> */}
-        <Counter2/>
-      </div>
-    )
-  }
-}
+      {/* <KeyPress/> */}
 
-
-
-// import React from 'react'
-// import './style.css'
-// import HelloWorld from './Component/HelloWorld'
-
-// const App = () => {
-
-  // using if statement
-  // const x = 6
-  // let text = 'Good bye'
-  // if(x>5){
-  //   text = 'Hello React'
-  // }
-
-  // using ternary Operator
-  // return (
-  //   <>
-    {/* <h1>{(x)<10?'Hello React':'Goodbye React'}</h1> */}
-    {/* <HelloWorld name={'Vikas'} para={'Welcome'}/>
-    <HelloWorld name={'Rishabh'} para={'Bye'}/> */}
-{/* 
-
+      {/* <Garrage2/> */}
+      <Garrage3/>
     </>
   )
 }
 
-export default App */}
-
-
-
-
-
+export default App
