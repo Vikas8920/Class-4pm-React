@@ -1,29 +1,22 @@
-// Today's Topics: Props, React Events, React Lists
 import React from 'react'
-// import KeyPress from './Component/KeyPress'
-// import Garrage2 from './Component/Garrage2'
-import Garrage3 from './Component/Garrage3'
-// import Button from './Component/Button'
-// import Garage from './Component/Garage'
-// import Football from './Component/Football'
+import Form from './Component/Form'
+import Form2 from './Component/Form2'
+import Select from './Component/Select'
+import RadioButtons from './Component/RadioButtons'
 
-// Props
 const App = () => {
   return (
     <>
-      {/* <Button text={'Click me'}/>
-      <Button text={'Submit'}/> */}
-
-      {/* <Garage/> */}
-
-      {/* <Football/> */}
-
-      {/* <KeyPress/> */}
-
-      {/* <Garrage2/> */}
-      <Garrage3/>
+    <Form/>
+    <hr/>
+    <Form2/>
+    <hr/>
+    <Select/>
+    <hr/>
+    <RadioButtons/>
     </>
   )
 }
 
 export default App
+
