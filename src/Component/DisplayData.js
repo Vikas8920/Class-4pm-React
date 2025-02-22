@@ -10,7 +10,14 @@ const DisplayData = () => {
     }, [])
   return (
     <>
-      
+      {users.map((user)=>(
+        <div key={user.id}>
+          <h6>{user.id}</h6>
+          <h6>Full name: {user.firstName + ' ' + user.lastName}</h6>
+          <h6>Email: {user.email}</h6>
+          <h6>Phone: {user.phone}</h6>
+        </div>
+      ))}
     </>
   )
 }
