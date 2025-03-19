@@ -1,26 +1,33 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './Component/Navbar'
-import Home from './Component/Home'
-import ProductList from './Component/ProductList'
-import Cart from './Component/Cart'
+import React, { useEffect, useRef, useState } from 'react'
+import Counter from './Component/Counter'
+import AuthProvider from './Component/AuthProvider'
+import Login from './Component/Login'
+import UserProfile from './Component/UserProfile'
 
 const App = () => {
-  const [cart, setCart] = useState([])
+  const [inputValue, setInputValue] = useState('')
+  // const count = useRef(0)
+  const previousInputValue = useRef('')
 
-  const addToCart = (product) =>{
-    setCart([...cart, product])
-  }
+  useEffect(()=>{
+    previousInputValue.current = inputValue
+  }, [inputValue])
   return (
     <>
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/products' element={<ProductList addToCart={addToCart}/>}/>
-          <Route path='/cart' element={(cart.length!==0)?<Cart cart={cart}/>:<div className='display-5 text-center mt-5'>Add items in your Cart</div>}/>
-        </Routes>
-      </BrowserRouter>
+      <input type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
+      <h1>Current value : {inputValue}</h1>
+      <h1>Previous value: {previousInputValue.current}</h1>
+
+      <hr/>
+      <Counter/>
+
+      <hr/>
+
+      <AuthProvider>
+        <h1>Simple Authentication System</h1>
+        <Login/>
+        <UserProfile/>
+      </AuthProvider>
     </>
   )
 }
