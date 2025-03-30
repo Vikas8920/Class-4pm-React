@@ -3,6 +3,8 @@ import Counter from './Component/Counter'
 import AuthProvider from './Component/AuthProvider'
 import Login from './Component/Login'
 import UserProfile from './Component/UserProfile'
+import ThemeProvider from './Component/ThemeProvider'
+import ThemeToggle from './Component/ThemeToggle'
 
 const App = () => {
   const [inputValue, setInputValue] = useState('')
@@ -28,6 +30,13 @@ const App = () => {
         <Login/>
         <UserProfile/>
       </AuthProvider>
+
+      <hr/>
+
+      <ThemeProvider>
+        <h1>Toggle Theme</h1>
+        <ThemeToggle/>
+      </ThemeProvider>
     </>
   )
 }
