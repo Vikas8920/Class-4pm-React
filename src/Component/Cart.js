@@ -1,37 +1,35 @@
 import React from 'react'
-import { useCart } from '../Context/CartContext'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
-    const {state} = useCart()
+    const productItems = useSelector((state)=>state.cart.cart)
   return (
     <>
       <div className='container'>
-        {state.cartItem.length === 0?(
+        {productItems.length === 0 ? (
             <h1>Your Cart is Empty</h1>
         ):(
             <table className='table'>
-               <thead>
-               <tr>
+                <tr>
                     <th>S.No.</th>
                     <th>Product Image</th>
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
                 </tr>
-               </thead>
-               <tbody>
-                {state.cartItem.map((item,index)=>(
-                    <tr key={item.id}>
-                        <td>{index+1}</td>
-                        <td><img src={item.images} style={{width:'60px'}}/></td>
-                        <td>{item.title}</td>
-                        <td>{item.price}</td>
-                        <td>{item.stock}</td>
-                    </tr>
-                ))}
-               <tr>
-                </tr>
-               </tbody>
+                {productItems.map((item,index)=>{
+                    return(
+                        <tr key={item.id}>
+                            <td className='ps-3'>{index+1}</td>
+                            <td>
+                                <img src={item.images} alt='' style={{width:'60px'}} className='ms-3'/>
+                            </td>
+                            <td className='ps-3'>{item.title}</td>
+                            <td className='ps-3'>$ {item.price}</td>
+                            <td className='ps-3'>{item.stock}</td>
+                        </tr>
+                    )
+                })}
             </table>
         )}
       </div>
